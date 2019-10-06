@@ -1,0 +1,20 @@
+<!--pages/index/details/details.wxml-->
+<nav>
+    <text class="nav_titel">{{titel}}</text>
+</nav>
+<view class="details">
+    <text class="details_h1">搜索：<text class="span">金色年华主题读书活动朗读大会</text></text>
+    <button bind:tap="details">点击复制</button>
+    <view class="details_list">
+        <text class="img_h1">部分截图</text>
+        <view class="details_img">
+            <image mode="widthFix" src="" />
+        </view>
+        <view class="details_img">
+            <image mode="widthFix" src="" />
+        </view>
+        <view class="details_img">
+            <image mode="widthFix" src="" />
+        </view>
+    </view>
+</view>

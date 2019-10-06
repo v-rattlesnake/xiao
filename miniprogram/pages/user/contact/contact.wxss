@@ -1,0 +1,10 @@
+/* pages/index/contact/contact.wxss */
+.opac{
+    opacity: 0;
+}
+.contact{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 40rpx;
+    line-height: 80rpx
+}

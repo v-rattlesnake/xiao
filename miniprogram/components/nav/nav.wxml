@@ -1,0 +1,11 @@
+<view style="height:{{height}};">
+    <view class="nav" style="height:{{height}};padding-top:{{paddingTop}};">
+        <view class="nav_left">
+            <view class="nav_img">
+                <image mode="widthFix" bind:tap="fanhui" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/return.png?sign=de3845f59627e58ee6d6f0116e9e232e&t=1569916150" />
+                <navigator bind:tap="_backhome" ><image mode="widthFix" src="cloud://lhy70e5678e-749a-4cc-772aq.6c68-lhy70e5678e-749a-4cc-772aq/index.png" /></navigator>
+            </view>
+        </view>
+        <slot></slot>
+    </view>
+</view>

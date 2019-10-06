@@ -1,0 +1,36 @@
+.nav{
+    background: #007acc;
+    width:100%;
+    position: fixed;
+    box-sizing: border-box;
+    z-index: 9999;
+}
+.nav .nav_left .nav_img{
+    width: 77px;
+    height: 32px;
+    background: rgba(255, 255, 255, .4);
+    border-radius: 20px;
+    margin: 6px 0 8px 10px;
+    padding: 0 6px;
+    box-sizing: border-box;
+}
+.nav .nav_left image{
+    width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    margin: 6px 0;
+}
+.nav .nav_left navigator image{
+    border-left: 1px solid #f54d41
+}
+
+
+
+
+
+
+
+
+
+
+

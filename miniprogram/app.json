@@ -1,0 +1,29 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/index/details/details",
+        "pages/user/user",
+        "pages/user/contact/contact",
+        "pages/room/room"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarTitleText": "云开发 QuickStart",
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页"
+            },{
+                "pagePath": "pages/user/user",
+                "text": "用户"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
+}

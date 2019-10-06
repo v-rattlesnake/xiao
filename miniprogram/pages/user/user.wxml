@@ -1,0 +1,37 @@
+<!-- pages/user/user.wxml -->
+<nav>
+    <text class="nav_titel">我的</text>
+</nav>
+<view class="message">
+    <view class="header">
+        <view class="header_img">
+            <image src="" />
+        </view>
+        <view class="header_text">
+            <view class="header_name">不归徒</view>
+            <view class="header_industry">前端开发</view>
+        </view>
+    </view>
+    <view class="user_list">
+        <view class="list_ul">
+            <view class="list_li">
+                <navigator url="">
+                    <text>功能</text>
+                    <image src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/gt.png?sign=96c271ef4537eea33cf4d3593ad37d88&t=1570245305" />
+                </navigator>
+            </view>
+            <view class="list_li">
+                <navigator url="./../room/room">
+                    <text>反馈or交流</text>
+                    <image src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/gt.png?sign=96c271ef4537eea33cf4d3593ad37d88&t=1570245305" />
+                </navigator>
+            </view>
+            <view class="list_li" bind:tap="install">
+                <navigator>
+                    <text>设置</text>
+                    <image src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/gt.png?sign=96c271ef4537eea33cf4d3593ad37d88&t=1570245305" />
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

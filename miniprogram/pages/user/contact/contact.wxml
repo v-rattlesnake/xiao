@@ -1,0 +1,7 @@
+<!--pages/index/contact/contact.wxml-->
+<nav>
+    <text class="nav_titel">反馈or联系</text>
+</nav>
+<view class="contact">
+    <view ></view>
+</view>

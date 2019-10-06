@@ -1,0 +1,55 @@
+<!-- pages/index1/index1.wxml -->
+<nav>
+    <text class="nav_titel">首页</text>
+</nav>
+<view class="content">
+    <view class="banner">
+        <view class="banner_ul" bind:tap="aaa">
+            <view wx:for="{{src}}" wx:key="index" class="banner_li {{index==i?'pitch':''}} {{index>i?'right':''}}" style="{{index>=i?'top:'+(src.length-index-1)*30+'rpx;opacity:'+(src.length-index-0.5)/i+';z-index:'+(src.length-index):'top:'+index*30+'rpx;opacity:'+(index+0.5)/i+';z-index:'+(index+1)}}">
+                <image src="{{item.src}}" />
+            </view>
+        </view>
+    </view>
+    <view class="message">
+        <view>
+            <view class="message_h1">上线项目</view>
+            <view class="message_ul">
+                <view class="message_li">
+                    <navigator url="./details/details">
+                        <image mode="" src="cloud://lhy70e5678e-749a-4cc-772aq.6c68-lhy70e5678e-749a-4cc-772aq-1300252913/2.png" />
+                        <text class="h2">text</text>
+                    </navigator>
+                </view>
+                <view class="message_li">
+                    <text class="strive">正在努力中···</text>
+                </view>
+            </view>
+        </view>
+        <view>
+            <view class="message_h1">个人作品</view>
+            <view class="message_ul">
+                <view class="message_li">
+                    <navigator url="./details/details">
+                        <image mode="" src="cloud://lhy70e5678e-749a-4cc-772aq.6c68-lhy70e5678e-749a-4cc-772aq-1300252913/2.png" />
+                        <text class="h2">text</text>
+                    </navigator>
+                </view>
+                <view class="message_li">
+                    <navigator url="./details/details">
+                        <image mode="" src="cloud://lhy70e5678e-749a-4cc-772aq.6c68-lhy70e5678e-749a-4cc-772aq-1300252913/2.png" />
+                        <text class="h2">text</text>
+                    </navigator>
+                </view>
+                <view class="message_li">
+                    <navigator url="./details/details">
+                        <image mode="" src="cloud://lhy70e5678e-749a-4cc-772aq.6c68-lhy70e5678e-749a-4cc-772aq-1300252913/2.png" />
+                        <text class="h2">text</text>
+                    </navigator>
+                </view>
+                <view class="message_li">
+                    <text class="strive">正在努力中···</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
