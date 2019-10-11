@@ -1,0 +1,40 @@
+<!-- pages/collectSuc/collectSuc.wxml -->
+<nav>
+    <text class="nav_titel">收藏</text>
+</nav>
+<view class="content">
+    <view hidden="s" class="null">
+        <image mode="widthFix" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/null.png?sign=9b04cf9c29749df36b6c74011eae452e&t=1570696735" />
+        <view>您还未收藏哦</view>
+    </view>
+    <view class="you">
+        <view class="list" style="height:calc(100vh - {{height}});width:{{width}};">
+            <view class="list_ul">
+                <view class="list_li">第一个收藏</view>
+                <view class="list_li">第二个收藏</view>
+                <view class="list_li">第三个收藏</view>
+                <view class="list_li">第四个收藏</view>
+                <view class="list_li">第五个收藏</view>
+                <view class="list_li">第六个收藏</view>
+                <view class="list_li">第一个收藏</view>
+                <view class="list_li">第二个收藏</view>
+                <view class="list_li">第三个收藏</view>
+                <view class="list_li">第四个收藏</view>
+                <view class="list_li">第五个收藏</view>
+                <view class="list_li">第六个收藏</view>
+            </view>
+        </view>
+        <view class="swiper">
+            <view class="content_text">
+                <text>{{a}}/{{content.length}}</text>
+            </view>
+            <swiper class="" style="height:calc(100vh - 150rpx - {{height}})" bindchange="swiperchange">
+                <swiper-item wx:for="{{content}}" wx:key="{{item.index}}">
+                    <view style="height:calc(100vh - 340rpx - {{height}})">
+                        <rich-text item-id="{{item.index}}">{{item.content}}</rich-text>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+</view>

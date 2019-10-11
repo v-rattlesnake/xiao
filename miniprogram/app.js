@@ -1,7 +1,15 @@
 //app.js
 App({
   onLaunch: function () {
-
+    let h
+    let p
+    let Rect = wx.getMenuButtonBoundingClientRect();
+    wx.getSystemInfo({
+        success: (res) => {
+            h = res.statusBarHeight+Rect.height+16 + "px"
+            p = res.statusBarHeight + "px"
+        }
+    })
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -15,6 +23,10 @@ App({
       })
     }
 
-    this.globalData = {}
+    this.globalData = {
+      url:"https://v.juhe.cn/joke",
+      height:h,
+      paddingTop:p
+    }
   }
 })

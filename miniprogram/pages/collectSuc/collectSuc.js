@@ -1,23 +1,11 @@
-// pages/index1/index1.js
-// import nav from "" 
-
+// pages/collectSuc/collectSuc.js
 const app = getApp()
-let time = null, srcArray = null;
-
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        height: app.globalData.height,
-        width: null,
-        opacity: 0,
-        top: null,
-        left: null,
-        index: 1,
-        src: srcArray,
-        i: false,
         content: [{
             "content": "女生分手的原因有两个，\r\n一个是：闺蜜看不上。另一个是：闺蜜看上了。",
             "hashId": "607ce18b4bed0d7b0012b66ed201fb08",
@@ -78,75 +66,24 @@ Page({
             "unixtime": 1418814837,
             "updatetime": "2014-12-17 19:13:57"
         }],
-        content1:[],
+        height:app.globalData.height,
         a:1,
-        b:0
+        width:"0"
     },
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-
-    setTime: function () {
-        clearInterval(time)
-        let shift = "";
-        time = setInterval(() => {
-            shift = this.data.src.shift()
-            this.data.src.push(shift)
-            this.setData({
-                src: this.data.src
-            })
-        }, 2000);
-    },
-    aaa: function () {
-        clearInterval(time)
-        console.log(this.data.src)
-    },
-    bbb: function () {
-        wx.request({
-            url: app.globalData.url + "/content/list.php",
-            data: {
-                key: "988b56b817df13431fd954d1db05df25",
-                page: 2
-            },
-            success: (res) => {
-                this.setData({
-                    // content:res.data.result
-                    // content1:res.data.result
-                })
-            }
-        })
-    },
+    
     swiperchange: function (e) {
         this.setData({
             a:e.detail.current+1
         })
     },
-    suiji:function(){
-        this.setData({
-            content:this.data.content1
-        })
-    },
-    res:function(){
-        this.setData()
-    },
+    /**
+     * 生命周期函数--监听页面加载
+     */
     onLoad: function (options) {
-        // this.bbb()
-        const db = wx.cloud.database()
-        db.collection('lunbo')
-            .get()
-            .then(res => {
-                // console.log(res.data)
-                srcArray = res.data
-                this.setData({
-                    src: res.data,
-                    i: Math.floor(res.data.length / 2 ? res.data.length / 2 : res.data.length / 2 + 1)
-                })
-            })
-            .catch(err => {
-                console.error(err)
-            })
+
     },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -158,7 +95,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        this.setTime()
+
     },
 
     /**

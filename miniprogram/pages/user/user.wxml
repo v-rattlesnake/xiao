@@ -22,13 +22,13 @@
             </view>
             <view class="list_li">
                 <navigator url="./../room/room">
-                    <text>反馈or交流</text>
+                    <text>反馈</text>
                     <image src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/gt.png?sign=96c271ef4537eea33cf4d3593ad37d88&t=1570245305" />
                 </navigator>
             </view>
             <view class="list_li" bind:tap="install">
                 <navigator>
-                    <text>设置</text>
+                    <text>权限设置</text>
                     <image src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/gt.png?sign=96c271ef4537eea33cf4d3593ad37d88&t=1570245305" />
                 </navigator>
             </view>
