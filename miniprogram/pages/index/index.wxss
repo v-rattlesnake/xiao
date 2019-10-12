@@ -9,6 +9,7 @@
     justify-content: space-between;
     width: 80vw;
     margin-left:10vw;
+    z-index: 99;
 }
 .content_text text{
     display: inline-block;

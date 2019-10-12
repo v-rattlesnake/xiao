@@ -3,38 +3,42 @@
     <text class="nav_titel">收藏</text>
 </nav>
 <view class="content">
-    <view hidden="s" class="null">
+    <view hidden='fsad' class="null">
         <image mode="widthFix" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/null.png?sign=9b04cf9c29749df36b6c74011eae452e&t=1570696735" />
         <view>您还未收藏哦</view>
     </view>
-    <view class="you">
+    <view hidden="{{!null}}" class="you">
         <view class="list" style="height:calc(100vh - {{height}});width:{{width}};">
             <view class="list_ul">
-                <view class="list_li">第一个收藏</view>
-                <view class="list_li">第二个收藏</view>
-                <view class="list_li">第三个收藏</view>
-                <view class="list_li">第四个收藏</view>
-                <view class="list_li">第五个收藏</view>
-                <view class="list_li">第六个收藏</view>
-                <view class="list_li">第一个收藏</view>
-                <view class="list_li">第二个收藏</view>
-                <view class="list_li">第三个收藏</view>
-                <view class="list_li">第四个收藏</view>
-                <view class="list_li">第五个收藏</view>
-                <view class="list_li">第六个收藏</view>
+                <view class="list_li {{i-1==index?'pitch':''}}" wx:for="{{content}}" wx:key="{{index}}" data-index="{{index}}" bind:tap="listLi">
+                    第{{index+1}}个收藏
+                </view>
             </view>
+            <text bind:tap="list" class="span">列表</text>
         </view>
         <view class="swiper">
             <view class="content_text">
-                <text>{{a}}/{{content.length}}</text>
+                <text>{{i}}/{{content.length}}</text>
             </view>
-            <swiper class="" style="height:calc(100vh - 150rpx - {{height}})" bindchange="swiperchange">
+            <swiper current="{{i-1}}" class="" style="height:calc(100vh - 150rpx - {{height}})" bindchange="swiperchange">
                 <swiper-item wx:for="{{content}}" wx:key="{{item.index}}">
-                    <view style="height:calc(100vh - 340rpx - {{height}})">
+                    <view style="height:calc(100vh - 340rpx - {{height}});padding: 0 {{padd}}">
                         <rich-text item-id="{{item.index}}">{{item.content}}</rich-text>
                     </view>
                 </swiper-item>
             </swiper>
+            <view class="funcList">
+                <view class="li" bind:tap="collectFunc">
+                    <image mode="widthFix" hidden="{{!collect}}" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/collect.png?sign=24ad61dae80d6d6480d5b66355bc1b67&t=1570694196" />
+                    <image mode="widthFix" hidden="{{collect}}" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/collectSuc.png?sign=d31bc4f3f9ac0b4db16efe8dea1dedf3&t=1570694206" />
+                    <view>取消收藏</view>
+                </view>
+                <view class="li"></view>
+                <view class="li">
+                    <image mode="widthFix" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/share.png?sign=6e5609c250c41b101f5a4fc5b7d5b936&t=1570694215" />
+                    <view>分享</view>
+                </view>
+            </view>
         </view>
     </view>
 </view>

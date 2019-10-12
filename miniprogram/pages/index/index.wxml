@@ -5,12 +5,12 @@
 <view class="content">
     <view class="content_text">
         <view class="tab">
-            <text class="picth" bind:tap="suiji">随机</text>
-            <text bind:tap="res">最热</text>
+            <text class="{{tab?'picth':''}}" bind:tap="suiji">随机</text>
+            <text class="{{tab?'':'picth'}}" bind:tap="hottest">最热</text>
         </view>
-        <text>{{a}}/{{content.length}}</text>
+        <text hidden="{{tab}}">{{i}}/{{content.length}}</text>
     </view>
-    <swiper class="" style="height:calc(100vh - 150rpx - {{height}})" bindchange="swiperchange">
+    <swiper current="{{i-1}}" class="" style="height:calc(100vh - 150rpx - {{height}})" bindchange="swiperchange">
         <swiper-item wx:for="{{content}}" wx:key="{{item.index}}">
             <view style="height:calc(100vh - 340rpx - {{height}})">
                 <rich-text item-id="{{item.index}}">{{item.content}}</rich-text>
@@ -18,9 +18,9 @@
         </swiper-item>
     </swiper>
     <view class="funcList">
-        <view class="li">
-            <image mode="widthFix" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/collect.png?sign=24ad61dae80d6d6480d5b66355bc1b67&t=1570694196" />
-            <image mode="widthFix" hidden="tr" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/collectSuc.png?sign=d31bc4f3f9ac0b4db16efe8dea1dedf3&t=1570694206" />
+        <view class="li" bind:tap="collectFunc">
+            <image mode="widthFix" hidden="{{!collect}}" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/collect.png?sign=24ad61dae80d6d6480d5b66355bc1b67&t=1570694196" />
+            <image mode="widthFix" hidden="{{collect}}" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/collectSuc.png?sign=d31bc4f3f9ac0b4db16efe8dea1dedf3&t=1570694206" />
             <view>收藏</view>
         </view>
         <view class="li">

@@ -12,7 +12,8 @@
 .content swiper-item view{
     width: 80vw;
     margin: 140rpx auto 0;
-    overflow-y: scroll
+    overflow-y: scroll;
+    box-sizing: border-box;
 }
 .content .content_text{
     position: absolute;
@@ -30,9 +31,9 @@
 .content .list{
     height: 100vh;
     position: relative;
+    z-index: 99;
 }
-.content .list::after{
-    content: "收藏列表";
+.content .list .span{
     display: block;
     position: absolute;
     line-height: 56rpx;
@@ -43,7 +44,7 @@
     top: 55rpx;
     right: 0;
     color: #fff;
-    width: 140rpx
+    width: 84rpx
 }
 .content .list .list_ul{
     background: #54b4f5;
@@ -53,10 +54,27 @@
 }
 .content .list .list_li{
     line-height: 40rpx;
-    margin: 20rpx 0;
-    padding: 0 10rpx;
-    font-size: 28rpx
+    padding: 20rpx 10rpx;
+    font-size: 32rpx
 }
 .content .swiper{
     flex: 1
+}
+.content .list .list_li.pitch{
+    background: #0380d4;
+}
+
+.funcList{
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+.funcList .li{
+    flex: 1;
+    text-align: center;
+    font-size: 24rpx
+}
+.funcList .li image{
+    width: 50rpx
 }
