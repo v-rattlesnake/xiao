@@ -12,7 +12,7 @@ Page({
         height:app.globalData.height,
         i:1,
         width:"0",
-        null:false,
+        listNan:false,
         padd:"",
         collect:false,
     },
@@ -30,9 +30,14 @@ Page({
         })
         .get({
             success: (res) => {
+                console.log(res.data.length)
                 if(res.data.length==0){
                     this.setData({
-                        null:true
+                        listNan:true
+                    })
+                }else{
+                    this.setData({
+                        listNan:false
                     })
                 }
                 this.setData({
@@ -121,8 +126,6 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-        this.collectLook()
-        console.log(app.globalData.openid)
     },
 
     /**
@@ -130,6 +133,7 @@ Page({
      */
     onShow: function () {
         this.collectLook()
+        console.log(app.globalData.openid)
     },
 
     /**

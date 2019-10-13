@@ -8,7 +8,7 @@
             <text class="{{tab?'picth':''}}" bind:tap="suiji">随机</text>
             <text class="{{tab?'':'picth'}}" bind:tap="hottest">最热</text>
         </view>
-        <text hidden="{{tab}}">{{i}}/{{content.length}}</text>
+        <text style="display:{{tab?'':'none'}}">{{i}}/{{content.length}}</text>
     </view>
     <swiper current="{{i-1}}" class="" style="height:calc(100vh - 150rpx - {{height}})" bindchange="swiperchange">
         <swiper-item wx:for="{{content}}" wx:key="{{item.index}}">

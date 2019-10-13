@@ -3,11 +3,11 @@
     <text class="nav_titel">收藏</text>
 </nav>
 <view class="content">
-    <view hidden='fsad' class="null">
+    <view style="display:{{listNan?'block':'none'}}" class="null">
         <image mode="widthFix" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/null.png?sign=9b04cf9c29749df36b6c74011eae452e&t=1570696735" />
         <view>您还未收藏哦</view>
     </view>
-    <view hidden="{{!null}}" class="you">
+    <view style="display:{{listNan?'none':'flex '}}" class="you">
         <view class="list" style="height:calc(100vh - {{height}});width:{{width}};">
             <view class="list_ul">
                 <view class="list_li {{i-1==index?'pitch':''}}" wx:for="{{content}}" wx:key="{{index}}" data-index="{{index}}" bind:tap="listLi">
