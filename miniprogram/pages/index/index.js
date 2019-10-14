@@ -313,6 +313,8 @@ Page({
         })
     },
 
+    // 分享
+    share:function(){},
     /**
      * 
      * @param {数组} array 
