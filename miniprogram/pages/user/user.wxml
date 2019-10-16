@@ -8,19 +8,23 @@
             <view class="list_li" bind:tap="more">
                 <navigator url="">
                     <text>功能</text>
-                    <image src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/gt.png?sign=96c271ef4537eea33cf4d3593ad37d88&t=1570245305" />
                 </navigator>
             </view>
             <view class="list_li">
-                <navigator url="./../room/room">
+                <button open-type="feedback"></button>
+                <navigator url="">
                     <text>反馈</text>
-                    <image src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/gt.png?sign=96c271ef4537eea33cf4d3593ad37d88&t=1570245305" />
+                </navigator>
+            </view>
+            <view class="list_li">
+                <button open-type="contact"></button>
+                <navigator url="">
+                    <text>在线客服</text>
                 </navigator>
             </view>
             <view class="list_li" bind:tap="install">
                 <navigator>
                     <text>权限设置</text>
-                    <image src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/gt.png?sign=96c271ef4537eea33cf4d3593ad37d88&t=1570245305" />
                 </navigator>
             </view>
         </view>

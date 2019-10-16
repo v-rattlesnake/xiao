@@ -119,7 +119,7 @@ Page({
             }).get()
                 .then(res => {
                     for (let i = 0; i < res.data.length; i++) {
-                        if (this.data.content[this.data.i - 1].hashId == res.data[i].ID) {
+                        if (this.data.content[this.data.i - 1].hashId == res.data[i].ID || this.data.content[this.data.i - 1].ID == res.data[i].ID) {
                             let openidUp = this.remov(res.data[i].openid, app.globalData.openid)
                             db.collection('collect').doc(res.data[i]._id).update({
                                 data: {
