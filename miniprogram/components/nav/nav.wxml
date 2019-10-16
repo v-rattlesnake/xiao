@@ -1,9 +1,16 @@
-<view style="height:{{height}};">
-    <view class="nav" style="height:{{height}};padding-top:{{paddingTop}};">
+<view style="height:{{heightdiv+'px'}};">
+    <view class="nav" style="height:{{height+'px'}};padding-top:{{paddingTop}};">
         <view class="nav_left">
-            <view class="nav_img">
+            <navigator style="display:{{pagesLength?'block':'none'}}" hover-class="none" open-type="navigateBack"><image src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/rollback.png?sign=63c67764a2627171656af33dff4f25fa&t=1571032071" /></navigator>
+            <view class="nav_img" bind:tap="navList">
             </view>
         </view>
         <slot></slot>
+    </view>
+    <view class="navList" style="display:{{display}}" animation="{{animationData}}">
+        <view class="navLi" bind:tap="indexOpen">首页</view>
+        <view class="navLi" bind:tap="collectOpen">收藏</view>
+        <view class="navLi" bind:tap="userOpen">设置</view>
+        <view class="navLi" bind:tap="mores">更多</view>
     </view>
 </view>

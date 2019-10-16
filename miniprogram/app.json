@@ -1,7 +1,8 @@
 {
     "pages": [
+        "pages/login/login",
         "pages/index/index",
-        "pages/index/details/details",
+        "pages/share/share",
         "pages/collectSuc/collectSuc",
         "pages/user/user",
         "pages/user/contact/contact",
@@ -19,12 +20,14 @@
             {
                 "pagePath": "pages/index/index",
                 "text": "首页"
-            },{
+            },
+            {
                 "pagePath": "pages/collectSuc/collectSuc",
                 "text": "收藏"
-            },{
+            },
+            {
                 "pagePath": "pages/user/user",
-                "text": "用户"
+                "text": "设置"
             }
         ]
     },

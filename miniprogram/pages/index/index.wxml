@@ -1,5 +1,5 @@
 <!-- pages/index1/index1.wxml -->
-<nav>
+<nav bind:change="changeName">
     <text class="nav_titel">首页</text>
 </nav>
 <view class="content">
@@ -10,24 +10,43 @@
         </view>
         <text style="display:{{tab?'':'none'}}">{{i}}/{{content.length}}</text>
     </view>
-    <swiper current="{{i-1}}" class="" style="height:calc(100vh - 150rpx - {{height}})" bindchange="swiperchange">
-        <swiper-item wx:for="{{content}}" wx:key="{{item.index}}">
-            <view style="height:calc(100vh - 340rpx - {{height}})">
-                <rich-text item-id="{{item.index}}">{{item.content}}</rich-text>
-            </view>
-        </swiper-item>
-    </swiper>
+    <list alreadyLoadData="{{alreadyLoadData}}" height="100%" 
+    bindloadMore="loadMore" 
+    bind:onRefresh="onRefresh">
+        <swiper current="{{i-1}}" class="" style="height:calc(100vh - 340rpx - {{height + 'px'}});margin-bottom:{{bottom + 'rpx'}}" bindchange="swiperchange">
+            <swiper-item wx:for="{{content}}" wx:key="{{item.index}}">
+                <view>
+                    <rich-text item-id="{{item.index}}">{{item.content}}</rich-text>
+                </view>
+            </swiper-item>
+        </swiper>
+    </list>
     <view class="funcList">
         <view class="li" bind:tap="collectFunc">
             <image mode="widthFix" hidden="{{!collect}}" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/collect.png?sign=24ad61dae80d6d6480d5b66355bc1b67&t=1570694196" />
             <image mode="widthFix" hidden="{{collect}}" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/collectSuc.png?sign=d31bc4f3f9ac0b4db16efe8dea1dedf3&t=1570694206" />
             <view>收藏</view>
         </view>
+        <view class="li"></view>
         <view class="li">
-        </view>
-        <view class="li">
+            <button open-type="share"></button>
             <image mode="widthFix" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/share.png?sign=6e5609c250c41b101f5a4fc5b7d5b936&t=1570694215" />
             <view>分享</view>
+        </view>
+    </view>
+</view>
+<view class="login" wx:if="{{t}}">
+    <image bind:tap="login" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/login.png?sign=39de17303565cde5081afaf2cf6f4ab4&t=1571120633" />
+</view>
+<view class="catalog" style="display:{{titleHidden}}">
+    <view class="catalog_con">
+        <view class="catalog_top">
+            <text>请输入收藏标题</text>
+        </view>
+        <input focus type="text" placeholder="最多八个字符" maxlength="8" bindinput="val"></input>
+        <view class="catalog_floot">
+            <button hover-class="none" data-index="0" bind:tap="btn">不写了</button>
+            <button hover-class="none" data-index="1" bind:tap="btn">写好了</button>
         </view>
     </view>
 </view>

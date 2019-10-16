@@ -1,0 +1,8 @@
+<!--pages/share/share.wxml-->
+<nav>
+    <text class="nav_titel">首页</text>
+</nav>
+<view class="share" style="height:calc(100vh - 400rpx - {{height}});">
+    <rich-text>{{content}}</rich-text>
+</view>
+<navigator hover-class="none" open-type="switchTab" url="./../index/index">首页</navigator>

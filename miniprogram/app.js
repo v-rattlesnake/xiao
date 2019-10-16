@@ -1,12 +1,27 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function (e) {
+
+    let tang = ""
+    
+    try {
+      var value = wx.getStorageSync('tang')
+      if (value) {
+        tang = false
+        // Do something with return value
+      }else{
+        tang = true
+      }
+    } catch (e) {
+      console.log(e)
+      // Do something when catch error
+    }
     let h;
     let p;
     let Rect = wx.getMenuButtonBoundingClientRect();
     wx.getSystemInfo({
       success: (res) => {
-        h = res.statusBarHeight + Rect.height + 16 + "px"
+        h = res.statusBarHeight + Rect.height + 16
         p = res.statusBarHeight + "px"
       }
     })
@@ -28,6 +43,7 @@ App({
       url: "https://v.juhe.cn/joke",
       height: h,
       paddingTop: p,
+      tan :tang
     }
   }
 })

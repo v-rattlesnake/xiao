@@ -5,6 +5,15 @@
     box-sizing: border-box;
     z-index: 9999;
 }
+.nav .nav_left{
+    display: flex;
+    justify-content: left;
+}
+.nav .nav_left navigator image{
+    width: 22px;
+    height: 22px;
+    margin: 14px 0 0 10px;
+}
 .nav .nav_left .nav_img{
     width: 20px;
     height: 18px;
@@ -24,7 +33,18 @@
     top: 6px
 }
 
-
+.navList{
+    text-align: center;
+    line-height: 30px;
+    background: rgba(0, 122, 204,.6);
+    color: #fff;
+    position: relative;
+    z-index: 999;
+    opacity: 0;
+}
+.navList navigator{
+    width: 100%;
+}
 
 
 

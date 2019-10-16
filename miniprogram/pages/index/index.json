@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "nav": "./../../components/nav/nav"
+    "nav": "./../../components/nav/nav",
+    "list": "./../../components/scrollList/scrollList"
   },
   "navigationStyle": "custom"
 }

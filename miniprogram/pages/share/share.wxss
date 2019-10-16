@@ -1,0 +1,13 @@
+/* pages/share/share.wxss */
+.share{
+    width: 80vw;
+    margin: 140rpx auto 0;
+    overflow-y: scroll;
+}
+navigator{
+    width: 80vw;
+    margin: 40rpx auto 0; 
+    display: block;
+    text-align: center;
+    line-height: 80rpx;
+}

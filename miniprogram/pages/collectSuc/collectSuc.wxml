@@ -1,5 +1,5 @@
 <!-- pages/collectSuc/collectSuc.wxml -->
-<nav>
+<nav bind:change="changeName">
     <text class="nav_titel">收藏</text>
 </nav>
 <view class="content">
@@ -8,10 +8,10 @@
         <view>您还未收藏哦</view>
     </view>
     <view style="display:{{listNan?'none':'flex '}}" class="you">
-        <view class="list" style="height:calc(100vh - {{height}});width:{{width}};">
+        <view class="list" style="height:calc(100vh - {{height + 'px'}} - {{heightdiv + 'rpx'}});width:{{width}};">
             <view class="list_ul">
-                <view class="list_li {{i-1==index?'pitch':''}}" wx:for="{{content}}" wx:key="{{index}}" data-index="{{index}}" bind:tap="listLi">
-                    第{{index+1}}个收藏
+                <view class="list_li {{i-1==index?'pitch':''}}" wx:for="{{titleArr}}" wx:key="{{index}}" data-index="{{index}}" bind:tap="listLi">
+                    {{item==""?'第'+(index+1)+'条收藏':item}}
                 </view>
             </view>
             <text bind:tap="list" class="span">列表</text>
@@ -20,9 +20,9 @@
             <view class="content_text">
                 <text>{{i}}/{{content.length}}</text>
             </view>
-            <swiper current="{{i-1}}" class="" style="height:calc(100vh - 150rpx - {{height}})" bindchange="swiperchange">
+            <swiper current="{{i-1}}" class="" style="height:calc(100vh - 340rpx - {{height + 'px'}});margin-bottom:{{bottom + 'rpx'}}" bindchange="swiperchange">
                 <swiper-item wx:for="{{content}}" wx:key="{{item.index}}">
-                    <view style="height:calc(100vh - 340rpx - {{height}});padding: 0 {{padd}}">
+                    <view style="height:calc(100vh - 340rpx - {{height + 'px'}});padding: 0 {{padd}}">
                         <rich-text item-id="{{item.index}}">{{item.content}}</rich-text>
                     </view>
                 </swiper-item>
@@ -35,6 +35,7 @@
                 </view>
                 <view class="li"></view>
                 <view class="li">
+                    <button open-type="share"></button>
                     <image mode="widthFix" src="https://6c68-lhy70e5678e-749a-4cc-772aq-1300252913.tcb.qcloud.la/share.png?sign=6e5609c250c41b101f5a4fc5b7d5b936&t=1570694215" />
                     <view>分享</view>
                 </view>
